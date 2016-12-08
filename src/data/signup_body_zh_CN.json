@@ -10,5 +10,5 @@
     "e_is_cn_site": "#if($is_cn_site==\"false\")",
     "e_else": "#else",
     "e_end": "#end",
-    "e_icon_path": "https://${cdn_domain}/static/img/email/icons"
+    "e_icon_path": "https://${cdn_domain}/static/images/email"
 }

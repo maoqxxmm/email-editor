@@ -13,6 +13,7 @@ a, img, q, ul, li, table, caption, tbody, tfoot, thead, tr, th, td {
 
 body {
   line-height: 1;
+  -webkit-font-smoothing: antialiased;
 }
 
 ol, ul {
@@ -31,16 +32,16 @@ ol li {
 
 a {
   text-decoration: underline;
-  color: #617fde;
+  color: #00c28b;
 }
 a:hover {
-  color: #617fde;
+  color: #00c28b;
 }
 a:hover, a:active {
   outline: 0;
 }
 a:visited {
-  color: #617fde;
+  color: #00c28b;
 }
 
 .tick-email {
@@ -48,8 +49,8 @@ a:visited {
   width: 600px;
   margin: 0 auto;
   margin-top: 30px;
-  border: 1px solid #d8e4f6;
-  border-radius: 12px;
+  border: 1px solid rgba(0, 0, 0, 0.12);
+  border-radius: 6px;
 }
 .tick-email .e-header {
   text-align: center;
@@ -92,9 +93,9 @@ a:visited {
   line-height: 42px;
   font-size: 22px;
   color: #fff;
-  background-color: #617fde;
-  border-radius: 8px;
-  border-color: #617fde;
+  background-color: #00c28b;
+  border-radius: 2px;
+  border-color: #00c28b;
   margin: 0 auto;
   margin-bottom: 44px;
   padding: 0 10px;
@@ -112,7 +113,7 @@ a:visited {
 }
 .tick-email .e-platform h5 {
   font-size: 14px;
-  color: #617fde;
+  color: #999;
   padding-bottom: 16px;
 }
 .tick-email .e-platform li {

@@ -1,7 +1,7 @@
-{
-    "title": "分享列表",
-    "e_title": "分享列表",
-    "e_intro": "<a href='mailto:${from_username}'>${from_user_display_name}</a>分享了一个列表<span class='e-warn'>${title}</span>给您，点击下方按钮查看",
+﻿{
+    "title": "分享笔记",
+    "e_title": "分享笔记",
+    "e_intro": "<a href='mailto:${from_username}'>${from_user_display_name}</a>分享了一个笔记/清单<span class='e-warn'>${title}</span>给您，点击下方按钮查看",
     "e_btn_link": "https://${site_domain}/${args}#n/${title}/tasks",
     "e_action": "立即查看",
     "e_footer_title": "免费下载${product_name}",
@@ -10,5 +10,5 @@
     "e_is_cn_site": "#if($is_cn_site==\"false\")",
     "e_else": "#else",
     "e_end": "#end",
-    "e_icon_path": "https://${cdn_domain}/static/img/email/icons"
+    "e_icon_path": "https://${cdn_domain}/static/images/email"
 }

@@ -1,7 +1,7 @@
 $font-family: -apple-system,".SFNSText-Regular","Roboto","Segoe UI","Oxygen","Ubuntu","Cantarell","Microsoft Yahei","微软雅黑","Helvetica Neue","メイリオ","ＭＳ Ｐゴシック",Arial,sans-serif;
 
 $t-gray: #999;
-$t-blue: #617fde;
+$t-blue: #00c28b;
 $white: #fff;
 $platinum: #f7f7f7;
 $black: #4b4b4b;
@@ -13,7 +13,7 @@ $f-f: 14px;
 $f-t: 24px;
 
 $vanilla: #ffc817;
-$base-border: 1px solid #d8e4f6;
+$base-border: 1px solid rgba(0,0,0,.12);
 $email-width: 600px;
 
 // Reset
@@ -32,6 +32,7 @@ a, img, q, ul, li, table, caption, tbody, tfoot, thead, tr, th, td
 
 body {
   line-height: 1;
+  -webkit-font-smoothing: antialiased;
 }
 ol, ul {
   list-style: none;
@@ -70,7 +71,7 @@ a {
   margin: 0 auto;
   margin-top: 30px;
   border: $base-border;
-  border-radius: 12px;
+  border-radius: 6px;
 
   .e-header {
     text-align: center;
@@ -116,7 +117,7 @@ a {
       font-size: 22px;
       color: $white;
       background-color: $t-blue;
-      border-radius: 8px;
+      border-radius: 2px;
       border-color: $t-blue;
       margin: 0 auto;
       margin-bottom: 44px;
@@ -139,7 +140,7 @@ a {
 
     h5 {
       font-size: 14px;
-      color: $t-blue;
+      color: $t-gray;
       padding-bottom: 16px;
     }
 
