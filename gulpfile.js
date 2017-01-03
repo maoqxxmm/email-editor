@@ -20,7 +20,8 @@ var dirs = {
     images: './src/img',
     entry: './src/entry',
     dest: './dist',
-    build: './build'
+    build: './build',
+    parent: '../web/task/src/main/webapp/WEB-INF/views/mail'
 }
 
 var plumberErrorHandler = {
@@ -94,3 +95,8 @@ gulp.task('build', shell.task([
     'gulp styles',
     'gulp hbs'
 ]));
+
+gulp.task('move', function () {
+    gulp.src([dirs.build + '/*'])
+        .pipe(gulp.dest(dirs.parent))
+})
