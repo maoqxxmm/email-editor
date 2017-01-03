@@ -5,10 +5,16 @@
   "main": "index.js",
   "scripts": {
     "watch": "gulp watch",
-    "build": "gulp build"
+    "build": "gulp build",
+    "start": "node ./bin/www"
   },
   "devDependencies": {
+    "body-parser": "~1.15.1",
+    "cookie-parser": "~1.4.3",
+    "debug": "~2.2.0",
     "del": "~2.0.2",
+    "express": "~4.13.4",
+    "express-velocity": "^1.0.0",
     "gulp": "~3.8.7",
     "gulp-autoprefixer": "~3.1.0",
     "gulp-compass": "~2.1.0",
@@ -19,7 +25,11 @@
     "gulp-notify": "~2.2.0",
     "gulp-plumber": "~1.0.1",
     "gulp-rename": "~1.2.2",
-    "gulp-shell": "~0.5.1"
+    "gulp-shell": "~0.5.1",
+    "hbs": "^4.0.1",
+    "minimist": "^1.2.0",
+    "morgan": "~1.7.0",
+    "serve-favicon": "~2.3.0"
   },
   "keywords": [
     "email",
