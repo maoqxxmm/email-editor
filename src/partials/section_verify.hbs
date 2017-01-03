@@ -1,0 +1,41 @@
+<div class="e-section-wrapper">
+    <div class="e-section">
+      <p class="e-intro">
+       {{{e_intro}}}
+      </p>
+    </div>
+
+    <div class="e-section">
+      <a class="e-btn" href="{{e_btn_link}}">{{e_action}}</a>
+    </div>
+
+    <div class="e-section">
+        <p class="e-intro">{{{e_btn_link_intro}}}</p>
+    </div>
+
+    #if ($is_cn_site == "false")
+    #else
+      <div class="e-section e-divider"></div>
+      <div class="e-section">
+        <div class="e-intro hc-list">
+          我们为您准备了简单易上手的入门指南，零基础也能玩转滴答清单。
+          <ul>
+            <li><a href="https://help.dida365.com/start/6194405595563425792">三步管理法，快速开始任务管理之旅</a></li>
+            <li><a href="https://help.dida365.com/start/6194427976021442560">不想拖延？这儿有一个更好完成任务的小窍门</a></li>
+            <li><a href="https://help.dida365.com/start/6194433338078396416">使用清单管理任务，和杂乱无章说再见</a></li>
+            <li><a href="https://help.dida365.com/start/6194436212359430144">如何设置重复任务？</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="e-section">
+        <div class="e-intro hc-list">
+          如果您对GTD等理论有一定的了解，我们也提供了时间管理技巧的超级干货。
+          <ul>
+            <li><a href="https://help.dida365.com/tips/a/6194692348203499520">5分钟学会GTD</a></li>
+            <li><a href="https://help.dida365.com/tips/a/6194691864369561600">用四象限管理任务</a></li>
+            <li><a href="https://help.dida365.com/tips/a/6194752031706578944">FAST四部曲</a></li>
+          </ul>
+        </div>
+      </div>
+    #end
+</div>

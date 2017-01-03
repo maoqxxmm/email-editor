@@ -1,8 +1,9 @@
 {
     "title": "验证邮箱",
     "e_title": "验证邮箱",
-    "e_intro": "请您点击下面的按钮验证您的邮箱，以确保能更好地享受${product_name}服务。",
+    "e_intro": "Hi ${email}，<br><br>欢迎加入滴答清单:)<br>从今天起，${product_name}将陪伴您开启时间管理的旅程。为了更好的享受${product_name}的所有服务，请点击下方按钮验证您的邮箱。",
     "e_btn_link": "https://${site_domain}/sign/verifyEmail?id=${verify_id}",
+    "e_btn_link_intro": "如果无法通过点击按钮打开，请将下方链接复制并粘贴到浏览器中打开。<br><a href='https://${site_domain}/sign/verifyEmail?id=${verify_id}'>https://${site_domain}/sign/verifyEmail?id=${verify_id}</a>",
     "e_action": "立即验证",
     "e_footer_title": "免费下载${product_name}",
     "e_footer_forum": "如果您需要任何帮助或者提供反馈, 请访问我们的<a href='https://help.${site_domain}.com'>帮助中心</a>。",

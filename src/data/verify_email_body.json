@@ -1,8 +1,9 @@
 {
     "title": "Confirm your email",
     "e_title": "Confirm your email",
-    "e_intro": "Please confirm your email address to ensure full access to ${product_name}.",
+    "e_intro": "Hey ${email},<br><br>Welcome to ${product_name}, your simple and flexible to-do list for work, home and everywhere else. Please confirm your email address to get full access to ${product_name}.",
     "e_btn_link": "https://${site_domain}/sign/verifyEmail?id=${verify_id}",
+    "e_btn_link_intro": "If you're unable to click on the button above, please copy and paste the URL into a new browser window instead.<br><a href='https://${site_domain}/sign/verifyEmail?id=${verify_id}'>https://${site_domain}/sign/verifyEmail?id=${verify_id}</a><br><br>Thanks for being part of ${product_name}:)",
     "e_action": "Confirm Now",
     "e_footer_title": "Get ${product_name}",
     "e_footer_forum": "If you need help or give us any feedback, please visit our <a href='https://help.${site_domain}.com'>Help Center</a>.",

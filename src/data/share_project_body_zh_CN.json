@@ -1,7 +1,7 @@
 {
     "title": "分享列表",
     "e_title": "分享列表",
-    "e_intro": "<a href='mailto:${from_username}'>${from_user_display_name}</a>分享了一个列表<span class='e-warn'>${title}</span>给您，点击下方按钮查看",
+    "e_intro": "Hi,<br><br>您的朋友<a href='mailto:${from_username}'>${from_user_display_name}</a>邀请您加入TA的清单<span class='e-warn'>${title}</span>，点击下方按钮和TA一起协作吧。",
     "e_btn_link": "https://${site_domain}/${args}#n/${title}/tasks",
     "e_action": "立即查看",
     "e_footer_title": "免费下载${product_name}",

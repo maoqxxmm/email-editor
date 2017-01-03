@@ -1,7 +1,7 @@
 {
     "title": "List Waiting for You",
     "e_title": "List Waiting for You",
-    "e_intro": "There is a list(<span class='e-wran'>${title}</span>) shared with you from <a href='mailto:${from_username}'>${from_user_display_name}</a>.",
+    "e_intro": "Hi,<br><br>Your friend <a href='mailto:${from_username}'>${from_user_display_name}</a> would like to invite you to join the list <span class='e-warn'>${title}</span>. Collaborate together to make great achievement!",
     "e_btn_link": "https://${site_domain}/${args}#n/${title}/tasks",
     "e_action": "View Now",
     "e_footer_title": "Get ${product_name}",

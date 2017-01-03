@@ -1,11 +1,11 @@
 $font-family: -apple-system,".SFNSText-Regular","Roboto","Segoe UI","Oxygen","Ubuntu","Cantarell","Microsoft Yahei","微软雅黑","Helvetica Neue","メイリオ","ＭＳ Ｐゴシック",Arial,sans-serif;
 
-$t-gray: #999;
+$t-gray: #6C6C6C;
 $t-blue: #617fde;
 $white: #fff;
 $platinum: #f7f7f7;
 $black: #4b4b4b;
-$darkgrey: #979797;
+$darkgrey: #262626;
 
 $f-h-text: 13px;
 $f-h-intro: 16px;
@@ -32,6 +32,7 @@ a, img, q, ul, li, table, caption, tbody, tfoot, thead, tr, th, td
 
 body {
   line-height: 1;
+  background-color:$platinum;
 }
 ol, ul {
   list-style: none;
@@ -69,9 +70,6 @@ a {
   width: $email-width;
   margin: 0 auto;
   margin-top: 30px;
-  border: $base-border;
-  border-radius: 12px;
-  background-color: $platinum;
 
   .e-header {
     text-align: center;
@@ -91,8 +89,8 @@ a {
 
   .e-intro {
     color: $darkgrey;
-    font-size: 16px;
-    line-height: 26px;
+    font-size: 15px;
+    line-height: 23px;
     margin: 35px 0;
   }
 
@@ -112,7 +110,7 @@ a {
   .e-section {
     width: 480px;
     margin: 0 auto;
-    text-align: center;
+    text-align: left;
     .e-btn {
       display: block;
       text-decoration: none;
@@ -130,6 +128,25 @@ a {
       margin-bottom: 44px;
       padding: 0 10px;
     }
+
+    .hc-list {
+      font-size: 13px;
+      color: $t-gray;
+
+      a {
+        color: $t-gray;
+
+        &:hover {
+          color: $t-gray;
+        }
+      }
+    }
+  }
+
+  .e-divider {
+    height: 1px;
+    background-color: #e5e5e5;
+    margin: 50px auto;
   }
 
 
@@ -149,7 +166,7 @@ a {
   .e-platform {
     text-align: center;
     font-size: 0;
-    padding: 0 32px 18px 32px;
+    padding: 0 32px 20px 32px;
 
     h5 {
       font-size: 12px;
@@ -160,7 +177,7 @@ a {
     li {
       display: inline-block;
       vertical-align: top;
-      margin: 0 5px;
+      margin: 0 8px;
       a {
         font-size: 13px;
       }
@@ -168,11 +185,12 @@ a {
 
     p {
       margin: 16px 0 0 0;
+      line-height: 12px;
     }
 
     .pointer {
-      font-size: 36px;
-      line-height: 13px;
+      margin: 0;
+      font-size: 13px;
       color: $t-blue;
     }
   }
@@ -188,7 +206,7 @@ a {
 
   .e-help {
     text-align: center;
-    padding: 12px 0 20px 0;
+    padding: 20px 0 20px 0;
   }
 
 }
