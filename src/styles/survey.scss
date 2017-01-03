@@ -6,6 +6,10 @@ $white: #fff;
 $platinum: #f7f7f7;
 $black: #4b4b4b;
 $darkgrey: #979797;
+$whitesmoke: #f2f2f2;
+
+$ptext8: rgba(4, 24, 53, .8);
+$ptext4: rgba(4, 24, 53, .4);
 
 $f-h-text: 13px;
 $f-h-intro: 16px;
@@ -14,7 +18,7 @@ $f-t: 24px;
 
 $vanilla: #ffc817;
 $base-border: 1px solid #d8e4f6;
-$email-width: 600px;
+$email-width: 680px;
 
 // Reset
 html, body, div, span, i,
@@ -32,6 +36,7 @@ a, img, q, ul, li, table, caption, tbody, tfoot, thead, tr, th, td
 
 body {
   line-height: 1;
+  background-color: $whitesmoke;
 }
 ol, ul {
   list-style: none;
@@ -69,23 +74,51 @@ a {
   width: $email-width;
   margin: 0 auto;
   margin-top: 30px;
-  border: $base-border;
-  border-radius: 12px;
-  background-color: $platinum;
 
   .e-header {
     text-align: center;
     img {
-      margin-top: 54px;
+      margin-top: 50px;
     }
   }
-  .e-h {
-    padding-top: 22px;
-    padding-bottom: 0;
-    h3 {
-      font-size: 28px;
-      color: $black;
-      line-height: 1;
+
+  .e-main {
+    background-color: $white;
+    margin: 50px 0 0;
+    border-radius: 4px;
+
+    .e-img-wrapper {
+      width: 680px;
+      border-radius: 4px 4px 0 0;
+      overflow: hidden;
+
+      img {
+        width: 680px;
+      }
+    }
+
+    .e-main-wrapper {
+      padding: 60px;
+
+      p {
+        font-size: 15px;
+        line-height: 24px;
+        color: $ptext8;
+        text-align: justify;
+
+        a {
+          text-decoration: none;
+          vertical-align: baseline;
+        }
+      }
+
+      p + p {
+        margin-top: 30px;
+      }
+
+      .e-survey-gift {
+        font-weight: bold;
+      }
     }
   }
 
@@ -102,15 +135,7 @@ a {
     padding: 0 4px;
   }
 
-  .e-section-wrapper {
-    background-color: white;
-    border-top: 6px solid $t-blue;
-    margin: 54px 0 0 0;
-    padding: 0 0 16px 0;
-  }
-
   .e-section {
-    width: 480px;
     margin: 0 auto;
     text-align: center;
     .e-btn {
@@ -118,32 +143,25 @@ a {
       text-decoration: none;
       cursor: pointer;
       text-align: center;
-      width: 160px;
-      height: 50px;
-      line-height: 50px;
+      width: 38%;
+      height: 46px;
+      line-height: 46px;
       font-size: 16px;
       color: $white;
       background-color: $t-blue;
-      border-radius: 2px;
+      border-radius: 4px;
       border-color: $t-blue;
-      margin: 0 auto;
-      margin-bottom: 44px;
+      margin: 30px auto;
       padding: 0 10px;
     }
   }
 
 
   .e-footer {
-    background: $platinum;
-    padding: 50px 0 20px;
+    // background: $platinum;
+    padding: 40px 0;
     border-bottom-left-radius: 10px;
     border-bottom-right-radius: 10px;
-
-    p {
-      color: $t-gray;
-      font-size: 10px;
-      line-height: 18px;
-    }
   }
 
   .e-platform {
@@ -152,8 +170,8 @@ a {
     padding: 0 32px 18px 32px;
 
     h5 {
-      font-size: 12px;
-      color: $t-gray;
+      font-size: 14px;
+      color: $ptext8;
       padding-bottom: 16px;
     }
 
@@ -162,18 +180,8 @@ a {
       vertical-align: top;
       margin: 0 5px;
       a {
-        font-size: 13px;
+        font-size: 12px;
       }
-    }
-
-    p {
-      margin: 16px 0 0 0;
-    }
-
-    .pointer {
-      font-size: 36px;
-      line-height: 13px;
-      color: $t-blue;
     }
   }
 
@@ -189,6 +197,12 @@ a {
   .e-help {
     text-align: center;
     padding: 12px 0 20px 0;
+
+    p {
+      color: $ptext4;
+      font-size: 10px;
+      line-height: 18px;
+    }
   }
 
 }
