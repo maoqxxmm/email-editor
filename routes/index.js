@@ -8,20 +8,21 @@ var route2Page = {
 	sharenote: 'sharenote_body',
 	signup: 'signup_body',
 	verifyemail: 'verify_email_body',
-	shareproject: 'share_project_body'
+	shareproject: 'share_project_body',
+	giftcode: 'gift_code_body'
 }
 
 var configs = {
 	en: {
 		product_name: 'DidaList',
 		is_cn_site: 'false',
-		site_domain: 'dida365.com',
+		site_domain: 'dida365',
 		cdn_domain: '127.0.0.1'
 	},
 	zh: {
 		product_name: '滴答清单',
 		is_cn_site: 'true',
-		site_domain: 'dida365.com',
+		site_domain: 'dida365',
 		cdn_domain: '127.0.0.1'
 	}
 }

@@ -193,6 +193,10 @@ a {
       font-size: 13px;
       color: $t-blue;
     }
+
+    .forum > a {
+      vertical-align: baseline;
+    }
   }
 
   .e-footer-sns {
