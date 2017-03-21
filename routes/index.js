@@ -17,13 +17,23 @@ var configs = {
 		product_name: 'DidaList',
 		is_cn_site: 'false',
 		site_domain: 'dida365',
-		cdn_domain: '127.0.0.1'
+		cdn_domain: '127.0.0.1',
+		codes: ['xxx'],
+		unit: '$',
+		total: '2',
+		orderId: 'xxxxxxxx',
+		createDate: '2016-12-10'
 	},
 	zh: {
 		product_name: '滴答清单',
 		is_cn_site: 'true',
 		site_domain: 'dida365',
-		cdn_domain: '127.0.0.1'
+		cdn_domain: '127.0.0.1',
+		codes: ['xxx','xxx','xxx'],
+		unit: '￥',
+		total: '20',
+		orderId: 'xxxxxxxx',
+		createDate: '2016-12-10'
 	}
 }
 

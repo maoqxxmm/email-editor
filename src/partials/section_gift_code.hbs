@@ -3,9 +3,7 @@
     <br>
     <p>{{{e_thanks}}}</p>
     <ul class="code-list">
-        <li>xxxxxxxxxxxxx</li>
-        <li>xxxxxxxxxxxxx</li>
-        <li>xxxxxxxxxxxxx</li>
+        {{{e_gift_code_list}}}
     </ul>
     <p>{{{e_gift_code_desc}}}</p>
     <div class="divider"></div>
@@ -19,7 +17,7 @@
             <tr>
                 <td>
                     <p class="info-title">{{{e_order_quantity}}}</p>
-                    <p class="info-detail">2</p>
+                    <p class="info-detail">{{{e_order_codes_length}}}</p>
                 </td>
                 <td class="total-title">
                     <p class="info-title">{{{e_order_pay}}}</p>
@@ -29,19 +27,19 @@
             <tr>
                 <td>
                     <p class="info-title">{{{e_order_date}}}</p>
-                    <p class="info-detail">2016年12月26日</p>
+                    <p class="info-detail">{{{e_order_date_detail}}}</p>
                 </td>
                 <td rowspan="2" class="total">
                     <p class="total-detail">
-                        <span class="unit">￥</span><!-->
-                        </!--><span class="number">278</span>
+                        <span class="unit">{{{e_order_unit}}}</span><!-->
+                        </!--><span class="number">{{{e_order_total}}}</span>
                     </p>
                 </td>
             </tr>
             <tr>
                 <td>
                     <p class="info-title">{{{e_order_number}}}</p>
-                    <p class="info-detail">xxxxxxxxxxxx</p>
+                    <p class="info-detail">{{{e_order_number_detail}}}</p>
                 </td>
             </tr>
         </tbody>
