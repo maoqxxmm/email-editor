@@ -1,48 +1,62 @@
-var express = require('express');
-var router = express.Router();
+var fs = require('fs');
+var Velocity = require('velocityjs');
+var path = require('path');
+var settings = require('../configs/settings')
+var mockMail = require('../mock/mail')
+var config = require('../configs/config')
+var maillist = require('../configs/maillist')
 
-var route2Page = {
-	renew: 'renew_body',
-	resetpassword: 'reset_Password_body',
-	setpassoword: 'set_Password_body',
-	sharenote: 'sharenote_body',
-	signup: 'signup_body',
-	verifyemail: 'verify_email_body',
-	shareproject: 'share_project_body',
-	giftcode: 'gift_code_body'
-}
-
-var configs = {
-	en: {
-		product_name: 'DidaList',
-		is_cn_site: 'false',
-		site_domain: 'dida365',
-		cdn_domain: '127.0.0.1',
-		codes: ['xxx'],
-		unit: '$',
-		total: '2',
-		orderId: 'xxxxxxxx',
-		createDate: '2016-12-10'
-	},
-	zh: {
-		product_name: '滴答清单',
-		is_cn_site: 'true',
-		site_domain: 'dida365',
-		cdn_domain: '127.0.0.1',
-		codes: ['xxx','xxx','xxx'],
-		unit: '￥',
-		total: '20',
-		orderId: 'xxxxxxxx',
-		createDate: '2016-12-10'
+module.exports = function (app) {
+	var route2Page = {
+		giftcode: 'gift_code_body',
+		renew: 'renew_body',
+		resetpassword: 'reset_Password_body',
+		shareproject: 'share_project_body',
+		signup: 'signup_body',
+		usersurvey: 'user_survey_3_body',
+		verifyemail: 'verify_email_body'
 	}
+
+	var compileHtml = function (pageName, data) {
+		var filePath = path.resolve('./build/', pageName.concat('.html'))
+		var layoutHtml = fs.readFileSync(filePath).toString();
+	  var Compile = Velocity.Compile;
+	  var asts = Velocity.parse(layoutHtml);
+	  var s = (new Compile(asts)).render(data);
+	  return s;
+	}
+
+	app.get(['/mail/:page', '/mail/:page/:lang'], function (req, res, next) {
+		var lang = req.params.lang
+		var page = req.params.page
+		var suffix = lang && /zh/.test(lang) ? '_zh_CN' : ''
+		console.log(route2Page[page] + suffix)
+		res.send(compileHtml(route2Page[page] + suffix, Object.assign({}, settings, mockMail[page])))
+	})
+
+	app.get('/send', function (req, res, next) {
+		res.render('sender', {
+			pages: route2Page,
+			maillist: maillist
+		})
+	})
+
+	app.post('/send', function (req, res, next) {
+		var body = req.body
+		var page = route2Page[body.mail]
+		var data = Object.assign({}, settings, mockMail[body.mail])
+		var lang = body.lang === 'en' ? '' : '_zh_CN'
+		
+		app.smtpTransport.sendMail({
+			from: config.mail.user, // sender address
+			to: body.receiver, // list of receivers
+			subject: compileHtml(page + '_title' + lang, data), // Subject line
+			html: compileHtml(page + lang, data) // html body
+		}, function (err) {
+			if (err) {
+				return res.send('Error')
+			}
+			res.redirect('/send')
+		})
+	})
 }
-
-router.get('/:page', function (req, res, next) {
-	res.render(route2Page[req.params.page].concat('.html'), configs.en)
-})
-
-router.get('/zh/:page', function (req, res, next) {
-	res.render(route2Page[req.params.page].concat('_zh_CN.html'), configs.zh)
-})
-
-module.exports = router;

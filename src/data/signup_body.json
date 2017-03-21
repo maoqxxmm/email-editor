@@ -1,14 +1,20 @@
 {
-    "title": "Welcome to ${product_name}",
-    "e_title": "Welcome to ${product_name}",
-    "e_intro": "Welcome to join ${site_domain}, your daily must-have to get everything perfectly done and keep life well organized. Please first confirm your email address to ensure full access to ${product_name}.",
-    "e_btn_link": "https://${site_domain}/sign/verifyEmail?id=${verify_id}",
-    "e_action": "Confirm Now",
-    "e_footer_title": "Get ${product_name}",
-    "e_footer_forum": "If you need help or give us any feedback, please visit our <a href='https://help.${site_domain}.com'>Help Center</a>.",
-    "e_footer_team": "${product_name} Team",
-    "e_is_cn_site": "#if($is_cn_site==\"false\")",
-    "e_else": "#else",
-    "e_end": "#end",
-    "e_icon_path": "https://${cdn_domain}/static/img/email/icons"
+    "common": {
+        "e_btn_link": "https://${site_domain}/sign/verifyEmail?id=${verify_id}"
+    },
+
+    "en": {
+        "title": "Welcome to ${product_name}",
+        "e_title": "Welcome to ${product_name}",
+        "e_intro": "Welcome to join ${site_domain}, your daily must-have to get everything perfectly done and keep life well organized. Please first confirm your email address to ensure full access to ${product_name}.",
+        "e_action": "Confirm Now"
+    },
+
+    "zh": {
+        "title": "欢迎加入${product_name}",
+        "e_title": "欢迎加入${product_name}",
+        "e_intro": "欢迎加入${product_name}，使它成为您每日必备的工具，来协助您完成所有的待办事项以更好的规划您的生活。首先，请您点击下面的按钮验证您的邮箱，以确保能更好的享受${product_name}服务。",
+        "e_action": "立即验证"
+    }
+    
 }

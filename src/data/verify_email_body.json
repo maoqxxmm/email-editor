@@ -1,15 +1,21 @@
 {
-    "title": "Confirm your email",
-    "e_title": "Confirm your email",
-    "e_intro": "Hey ${email},<br><br>Welcome to ${product_name}, your simple and flexible to-do list for work, home and everywhere else. Please confirm your email address to get full access to ${product_name}.",
-    "e_btn_link": "https://${site_domain}/sign/verifyEmail?id=${verify_id}",
-    "e_btn_link_intro": "If you're unable to click on the button above, please copy and paste the URL into a new browser window instead.<br><a href='https://${site_domain}/sign/verifyEmail?id=${verify_id}'>https://${site_domain}/sign/verifyEmail?id=${verify_id}</a><br><br>Thanks for being part of ${product_name}:)",
-    "e_action": "Confirm Now",
-    "e_footer_title": "Get ${product_name}",
-    "e_footer_forum": "If you need help or give us any feedback, please visit our <a href='https://help.${site_domain}.com'>Help Center</a>.",
-    "e_footer_team": "${product_name} Team",
-    "e_is_cn_site": "#if($is_cn_site==\"false\")",
-    "e_else": "#else",
-    "e_end": "#end",
-    "e_icon_path": "https://${cdn_domain}/static/img/email/icons"
+    "common": {
+        "e_btn_link": "https://${site_domain}/sign/verifyEmail?id=${verify_id}"
+    },
+
+    "en": {
+        "title": "Confirm your email",
+        "e_title": "Confirm your email",
+        "e_intro": "Hey ${email},<br><br>Welcome to ${product_name}, your simple and flexible to-do list for work, home and everywhere else. Please confirm your email address to get full access to ${product_name}.",
+        "e_btn_link_intro": "If you're unable to click on the button above, please copy and paste the URL into a new browser window instead.<br><a href='https://${site_domain}/sign/verifyEmail?id=${verify_id}'>https://${site_domain}/sign/verifyEmail?id=${verify_id}</a><br><br>Thanks for being part of ${product_name}:)",
+        "e_action": "Confirm Now"
+    },
+
+    "zh": {
+        "title": "验证邮箱",
+        "e_title": "验证邮箱",
+        "e_intro": "Hi ${email}，<br><br>欢迎加入滴答清单:)<br>从今天起，${product_name}将陪伴您开启时间管理的旅程。为了更好的享受${product_name}的所有服务，请点击下方按钮验证您的邮箱。",
+        "e_btn_link_intro": "如果无法通过点击按钮打开，请将下方链接复制并粘贴到浏览器中打开。<br><a href='https://${site_domain}/sign/verifyEmail?id=${verify_id}'>https://${site_domain}/sign/verifyEmail?id=${verify_id}</a>",
+        "e_action": "立即验证"
+    }
 }

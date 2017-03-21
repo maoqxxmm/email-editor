@@ -9,6 +9,9 @@ var gulp = require('gulp'),
     path = require('path'),
     rename = require('gulp-rename'),
     plumber = require('gulp-plumber'),
+    argv = require('yargs').argv,
+    gulpIgnore = require('gulp-ignore'),
+    fs = require('fs'),
     notify = require('gulp-notify');
 
 
@@ -30,6 +33,8 @@ var plumberErrorHandler = {
     })
 };
 
+var commonData = require(dirs.data + '/common.json')
+
 var styles = function() {
     return gulp.src([dirs.styles + '/**/*.scss'], {
             base: dirs.styles
@@ -43,7 +48,7 @@ var styles = function() {
         .pipe(gulp.dest(dirs.dest));
 }
 
-var hbs = function() {
+var hbs = function(lang, watch) {
     var options = {
         // ignorePartials: false,
         // partials: {
@@ -57,17 +62,42 @@ var hbs = function() {
         // }
     }
 
+    var outPipe = false
+
+    if (!watch) {
+        !fs.existsSync(dirs.build) && fs.mkdirSync(dirs.build)
+    }
+
     return gulp.src([dirs.entry + '/*.hbs'])
         .pipe(plumber(plumberErrorHandler))
         .pipe(data(function(file) {
-            return require(dirs.data + '/' + path.basename(file.path, '.hbs') + '.json');
+            var datas = require(dirs.data + '/' + path.basename(file.path, '.hbs') + '.json');
+            var data = undefined
+            if (datas[lang]) {
+                outPipe = false
+                data = Object.assign({}, commonData[lang], datas['common'], datas[lang])
+                if (!watch) {
+                    var filePath = dirs.build + '/' + path.basename(file.path, '.hbs') + '_title' + (lang == 'zh' ? '_zh_CN' : '') + '.html'
+                    var out = fs.createWriteStream(filePath);
+                    out.on('open', function () {
+                        out.write(data.title)
+                        out.end()
+                    })
+                }
+            } else {
+                outPipe = true
+            }
+            return data
+        }))
+        .pipe(gulpIgnore.exclude(function () {
+            return outPipe
         }))
         .pipe(handlebars(data, options))
         .pipe(inlineCss())
         .pipe(rename(function (path) {
+          lang == 'zh' && (path.basename += '_zh_CN')
           path.extname = '.html'
         }))
-        .pipe(gulp.dest(dirs.dest))
         .pipe(gulp.dest(dirs.build));
 
 }
@@ -79,11 +109,13 @@ gulp.task('clean', function() {
 });
 
 gulp.task('watch', function() {
-    gulp.watch([dirs.src + '/**/*'], ['build']);
+    gulp.watch([dirs.src + '/**/*'], ['build --watch']);
 });
 
 gulp.task('hbs', function() {
-    hbs();
+    var lang = argv.lang || 'en'
+    var watch = argv.watch
+    hbs(lang, watch);
 })
 
 gulp.task('styles', function() {
@@ -93,7 +125,8 @@ gulp.task('styles', function() {
 gulp.task('build', shell.task([
     'gulp clean',
     'gulp styles',
-    'gulp hbs'
+    'gulp hbs',
+    'gulp hbs --lang zh'
 ]));
 
 gulp.task('move', function () {

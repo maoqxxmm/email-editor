@@ -1,15 +1,20 @@
 {
-    "title": "List Waiting for You",
-    "e_title": "List Waiting for You",
-    "e_intro": "Hi,<br><br>Your friend <a href='mailto:${from_username}'>${from_user_display_name}</a> would like to invite you to join the list <span class='e-warn'>${title}</span>. Collaborate together to make great achievement!",
-    "e_btn_link": "https://${site_domain}/${args}#n/${title}/tasks",
-    "e_action": "View Now",
-    "e_footer_title": "Get ${product_name}",
-    "e_footer_forum": "If you need help or give us any feedback, please visit our <a href='https://help.${site_domain}.com'>Help Center</a>.",
-    "e_footer_team": "${product_name} Team",
-    "e_is_cn_site": "#if($is_cn_site==\"false\")",
-    "e_else": "#else",
-    "e_end": "#end",
-    "e_icon_path": "https://${cdn_domain}/static/img/email/icons"
+    "common": {
+        "e_btn_link": "https://${site_domain}/${args}#n/${title}/tasks"
+    },
+
+    "en": {
+        "title": "List Waiting for You",
+        "e_title": "List Waiting for You",
+        "e_intro": "Hi,<br><br>Your friend <a href='mailto:${from_username}'>${from_user_display_name}</a> would like to invite you to join the list <span class='e-warn'>${title}</span>. Collaborate together to make great achievement!",
+        "e_action": "View Now"
+    },
+
+    "zh": {
+        "title": "分享列表",
+        "e_title": "分享列表",
+        "e_intro": "Hi,<br><br>您的朋友<a href='mailto:${from_username}'>${from_user_display_name}</a>邀请您加入TA的清单<span class='e-warn'>${title}</span>，点击下方按钮和TA一起协作吧。",
+        "e_action": "立即查看"
+    }
 }
 
