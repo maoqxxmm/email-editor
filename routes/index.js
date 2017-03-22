@@ -19,18 +19,21 @@ module.exports = function (app) {
 
 	var compileHtml = function (pageName, data) {
 		var filePath = path.resolve('./build/', pageName.concat('.html'))
-		var layoutHtml = fs.readFileSync(filePath).toString();
-	  var Compile = Velocity.Compile;
-	  var asts = Velocity.parse(layoutHtml);
-	  var s = (new Compile(asts)).render(data);
-	  return s;
+		try {
+			var layoutHtml = fs.readFileSync(filePath).toString();
+		  var Compile = Velocity.Compile;
+		  var asts = Velocity.parse(layoutHtml);
+		  var s = (new Compile(asts)).render(data);
+		  return s;
+		} catch (err) {
+			return ''
+		}
 	}
 
 	app.get(['/mail/:page', '/mail/:page/:lang'], function (req, res, next) {
 		var lang = req.params.lang
 		var page = req.params.page
 		var suffix = lang && /zh/.test(lang) ? '_zh_CN' : ''
-		console.log(route2Page[page] + suffix)
 		res.send(compileHtml(route2Page[page] + suffix, Object.assign({}, settings, mockMail[page])))
 	})
 
@@ -46,14 +49,15 @@ module.exports = function (app) {
 		var page = route2Page[body.mail]
 		var data = Object.assign({}, settings, mockMail[body.mail])
 		var lang = body.lang === 'en' ? '' : '_zh_CN'
-		
+
 		app.smtpTransport.sendMail({
 			from: config.mail.user, // sender address
-			to: body.receiver, // list of receivers
-			subject: compileHtml(page + '_title' + lang, data), // Subject line
+			to: maillist.join(','), // list of receivers
+			subject: compileHtml(page.replace(/(body)/, 'title') + lang, data), // Subject line
 			html: compileHtml(page + lang, data) // html body
 		}, function (err) {
 			if (err) {
+				console.log(err)
 				return res.send('Error')
 			}
 			res.redirect('/send')

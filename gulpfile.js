@@ -77,7 +77,7 @@ var hbs = function(lang, watch) {
                 outPipe = false
                 data = Object.assign({}, commonData[lang], datas['common'], datas[lang])
                 if (!watch) {
-                    var filePath = dirs.build + '/' + path.basename(file.path, '.hbs') + '_title' + (lang == 'zh' ? '_zh_CN' : '') + '.html'
+                    var filePath = dirs.build + '/' + path.basename(file.path, '.hbs').replace(/(body)$/, 'title') + (lang == 'zh' ? '_zh_CN' : '') + '.html'
                     var out = fs.createWriteStream(filePath);
                     out.on('open', function () {
                         out.write(data.title)
