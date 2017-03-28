@@ -109,7 +109,7 @@ gulp.task('clean', function() {
 });
 
 gulp.task('watch', function() {
-    gulp.watch([dirs.src + '/**/*'], ['build --watch']);
+    gulp.watch([dirs.src + '/**/*'], ['build']);
 });
 
 gulp.task('hbs', function() {

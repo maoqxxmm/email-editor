@@ -1,10 +1,9 @@
 {
     "common": {
-        "e_gift_code_list": "#foreach($code in $codes)<li>$code</li>#end",
-        "e_order_codes_length": "$codes.length",
-        "e_order_date_detail": "$createDate",
-        "e_order_unit": "$unit",
-        "e_order_total": "$total",
+        "e_gift_code_list": "#foreach($code in $codes)<li>$code.id</li>#end",
+        "e_order_codes_length": "$codes.size()",
+        "e_order_date_detail": "$createdDate",
+        "e_order_total": "$amount",
         "e_order_number_detail": "$orderId"
     },
 
@@ -21,7 +20,8 @@
         "e_order_pay": "Pay",
         "e_order_date": "Date",
         "e_order_number": "Order",
-        "e_help": "Gift code does not support refund.<br>Contact us at <a href=\"mailto:support@${site_domain}.com\">support@${site_domain}.com</a> if you have any question."
+        "e_order_unit": "$",
+        "e_help": "Gift code does not support refund.<br>Contact us at <a href=\"mailto:support@${site_domain}\">support@${site_domain}</a> if you have any question."
     },
 
     "zh": {
@@ -37,6 +37,7 @@
         "e_order_pay": "总计",
         "e_order_date": "购买日期",
         "e_order_number": "订单编号",
-        "e_help": "购买兑换码不支持退款。<br>如有任何疑问，请通过 <a href=\"mailto:support@${site_domain}.com\">support@${site_domain}.com</a> 联系我们。"
+        "e_order_unit": "￥",
+        "e_help": "购买兑换码不支持退款。<br>如有任何疑问，请通过 <a href=\"mailto:support@${site_domain}\">support@${site_domain}</a> 联系我们。"
     }
 }
