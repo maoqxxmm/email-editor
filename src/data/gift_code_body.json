@@ -4,30 +4,30 @@
         "e_order_codes_length": "$codes.size()",
         "e_order_date_detail": "$createdDate",
         "e_order_total": "$amount",
+        "e_order_unit": "#if(${site_domain} == 'dida365.com')￥#else $#end",
         "e_order_number_detail": "$orderId"
     },
 
     "en": {
         "title": "Gift code of ${product_name} Pro",
         "e_dear": "Dear ${user_display_name}",
-        "e_thanks": "#if($codes.length > 1)Thanks for purchasing gift codes of TickTick Pro, here are your gift codes.#else Thanks for purchasing gift code of TickTick Pro, here is your gift code.#end",
-        "e_gift_code_desc": "For further checking the status of each gift code, please sign in ticktick.com and view Purchase History through Settings, Redeem, Purchase History. Make sure to use it(them) in time because gift code(s) is(are) available for one year since purchasing succeeded.",
+        "e_thanks": "#if($codes.size() > 1)Thanks for purchasing gift codes of ${product_name} Pro, here are your gift codes.#else Thanks for purchasing gift code of ${product_name} Pro, here is your gift code.#end",
+        "e_gift_code_desc": "#if($codes.size() > 1)For further checking the status of each gift code, please sign in ${site_domain} and view Purchase History through Settings, Redeem, Purchase History. Make sure to use them in time because gift codes are available for one year since purchasing succeeded.#else For further checking the status of each gift code, please sign in ${site_domain} and view Purchase History through Settings, Redeem, Purchase History. Make sure to use it in time because gift code is available for one year since purchasing succeeded.#end",
         "e_gift_code_help": "How to use a gift code?",
-        "e_help_app": "For mobile device, open TickTick and select Settings, Upgrade to Pro, then you’ll see the Redeem at the bottom of screen, paste the gift code above in the input box.",
-        "e_help_web": "For website, sign in ticktick.com and select Avatar, Settings, Redeem, then paste the gift code above in the input box.",
+        "e_help_app": "For mobile device, open ${product_name} and select Settings, Upgrade to Pro, then you’ll see the Redeem at the bottom of screen, paste the gift code above in the input box.",
+        "e_help_web": "For website, sign in ${site_domain} and select Avatar, Settings, Redeem, then paste the gift code above in the input box.",
         "e_order_info": "Transaction",
         "e_order_quantity": "Quantity",
         "e_order_pay": "Pay",
         "e_order_date": "Date",
         "e_order_number": "Order",
-        "e_order_unit": "$",
         "e_help": "Gift code does not support refund.<br>Contact us at <a href=\"mailto:support@${site_domain}\">support@${site_domain}</a> if you have any question."
     },
 
     "zh": {
         "title": "${product_name}高级账户兑换码",
         "e_dear": "尊敬的${user_display_name}",
-        "e_thanks": "感谢您购买滴答清单高级账户兑换码，以下是一年期高级账户兑换码。",
+        "e_thanks": "感谢您购买${product_name}高级账户兑换码，以下是一年期高级账户兑换码。",
         "e_gift_code_desc": "您可以登录网页端，并在「设置」-「兑换」-「兑换码购买记录」中查看各兑换码的使用状态。兑换码自购买日起1年内有效，请您及时使用。",
         "e_gift_code_help": "高级账户兑换码使用方法",
         "e_help_app": "移动端：「设置」-「升级到高级账户」- 页面底部「兑换」-输入兑换码",
@@ -37,7 +37,6 @@
         "e_order_pay": "总计",
         "e_order_date": "购买日期",
         "e_order_number": "订单编号",
-        "e_order_unit": "￥",
         "e_help": "购买兑换码不支持退款。<br>如有任何疑问，请通过 <a href=\"mailto:support@${site_domain}\">support@${site_domain}</a> 联系我们。"
     }
 }
